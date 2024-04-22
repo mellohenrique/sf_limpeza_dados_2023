@@ -1,6 +1,6 @@
-# Limpa dados de VAAR ----
+# Limpa dados de VAAF ----
 
-## Carrega dados do VAAR ----
+## Carrega dados do VAAF ----
 recursos_vaaf = readxl::read_excel('dados/bruto/copy2_of_ReceitaeComplementaoporentefederadoFundeb2023.xlsx', na = '-', guess_max = 5e3, skip = 1)
 
 ## Seleciona colunas de interesse ----

@@ -33,3 +33,10 @@ Os dados foram obtidos das seguintes fontes:
 * Os entes inabilitados para o VAAT foram obtidos no [comunicado do Fundeb sobre a habilitação dos entes](https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/financiamento/fundeb/2023-1/COMUNICADOHABILITAOFINALVAAT2023.pdf);
 * Os pesos considerados para o VAAR foram obtidos no [portaria interministerial número 7 de 2023](https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/financiamento/fundeb/AnexoVPortariaInterm.n7de29.12.2023.pdf).
 * Os pesos de aluno por etapa foram obtidos da [nota técnica conjunto número 12 de 2022](https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/financiamento/fundeb/notas-tecnicas/NotaTcnicaConjuntan122022.pdf).
+
+## Scripts
+
+* agrega_dados_vaat: obtem dados limpos por scripts intermediários e pela extração dos dados de pdf e os une em uma tabela para ser usada na simulação;
+* avaliacao_simulacao: testa os resultados da simulação em relação aos resultados obtidos pelo INEP;
+* gera_df_pesos: gera uma tabela em excel para se escrever os pesos manualmente;
+

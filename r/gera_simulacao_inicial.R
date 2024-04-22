@@ -1,7 +1,9 @@
+# Gera dados da simulacao para o dashboard e para a avaliacao dos resultados
+
 # Carrega dados
-pesos = readxl::read_excel('dados/pesos.xlsx')
-alunos = readr::read_csv2('dados/alunos.csv', guess_max = 1e10)
-complementos = readr::read_csv2('dados/dados_complementares.csv')
+pesos = readxl::read_excel('dados/simulacao/pesos.xlsx')
+alunos = readr::read_csv2('dados/simulacao/alunos.csv', guess_max = 1e10)
+complementos = readr::read_csv2('dados/simulacao/dados_complementares.csv')
 
 # simulacao
 simulacao_inicial = simulador.fundeb::simula_fundeb(
@@ -27,3 +29,4 @@ save(alunos, file =  'dados/dash_simulador_fundeb/alunos.rda')
 save(pesos, file =  'dados/dash_simulador_fundeb/pesos.rda')
 save(simulacao_inicial, file =  '../dash_simulador_fundeb/simulacao_inicial.rda')
 save(simulacao_inicial_agregada, file =  'dados/dash_simulador_fundeb/simulacao_inicial_agregada.rda')
+write_excel_csv2(simulacao_inicial, 'dados/simulacao/simulacao_inicial.csv')
