@@ -6,11 +6,14 @@ A principal fonte de dados utilizada foi a [portaria interministerial número 7 
 
 ## Projeto
 
-O projeto de limpeza dos do fundeb de 2023. Etapas:
+O projeto de limpeza dos do fundeb de 2023. O projeto consiste das seguintes etapas:
+
 1. Obtenção dos dados (extração manual do portal);
 2. Conversão dos dados pdf em .xlsx (usando script em python e o portal [ilovepdf](https://www.ilovepdf.com/pt);
 3. Limpeza inicial dos dados;
-4. Agregação dos dados no formato adequado ao consumo pelo simulador.
+4. Agregação dos dados no formato adequado ao consumo pelo simulador;
+5. Simulação para 2024 com os valores padrão;
+6. Teste da adequação da simulação de 2024 com a simulação de referência.
 
 ## Produto
 
@@ -18,6 +21,22 @@ As seguintes tabelas são esperadas desse projeto:
 * Dados de alunos para 2023 por etapa e ente federado;
 * Dados de peso por etapa e modalidade de complementação (VAAF e VAAT);
 * Dados complementares dos entes federados (recursos, habilitação para etapa VAAT e peso VAAR).
+
+
+## Scripts
+
+* R:
+  * avaliacao_simulacao: testa os resultados da simulação em relação aos resultados obtidos pelo INEP;
+  * gera_estrutura_pesos: gera uma tabela em excel para se escrever os pesos manualmente;
+  * gera_simulação: 
+  * limpa_dados_complementares: obtem dados limpos por scripts intermediários e pela extração dos dados de pdf e os une em uma tabela com os dados complementares que serão usados na simulação;
+  * limpa_dados_alunos: limpa dados de alunos agregados pelo script python;
+  * limpa_dados_inabilitados: limpa dados de inabilitados para a etapa VAAT;
+  * limpa_dados_vaaf: limpa dados de recursos da etapa VAAF;
+  * limpa_dados_vaar: limpa dados de recursos de pesos da etapa VAAR;
+  * limpa_dados_vaat: limpa dados de recursos da etapa VAAT.
+* Python:
+  * transforma_matriculas.py: lê arquivos em pdf e extrai valores de matrículas desses arquivos para uma única tabela.
 
 ## Fontes
 
@@ -33,10 +52,4 @@ Os dados foram obtidos das seguintes fontes:
 * Os entes inabilitados para o VAAT foram obtidos no [comunicado do Fundeb sobre a habilitação dos entes](https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/financiamento/fundeb/2023-1/COMUNICADOHABILITAOFINALVAAT2023.pdf);
 * Os pesos considerados para o VAAR foram obtidos no [portaria interministerial número 7 de 2023](https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/financiamento/fundeb/AnexoVPortariaInterm.n7de29.12.2023.pdf).
 * Os pesos de aluno por etapa foram obtidos da [nota técnica conjunto número 12 de 2022](https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/financiamento/fundeb/notas-tecnicas/NotaTcnicaConjuntan122022.pdf).
-
-## Scripts
-
-* agrega_dados_vaat: obtem dados limpos por scripts intermediários e pela extração dos dados de pdf e os une em uma tabela para ser usada na simulação;
-* avaliacao_simulacao: testa os resultados da simulação em relação aos resultados obtidos pelo INEP;
-* gera_df_pesos: gera uma tabela em excel para se escrever os pesos manualmente;
 
