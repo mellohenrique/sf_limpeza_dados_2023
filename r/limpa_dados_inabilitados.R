@@ -1,4 +1,4 @@
-# Limpa dados de inabilitados_vaat inabilitados
+# Limpa dados de inabilitados para a etapa VAAT
 
 ## Carrega dados ----
 inabilitados_vaat = purrr::map_dfr(readxl::excel_sheets('dados/bruto/Relacao_de_Entes_VAAT_2023Final.xlsx'),

@@ -1,4 +1,4 @@
-# Limpa dados de VAAF ----
+# Limpa dados de recursos da etapa VAAF ----
 
 ## Carrega dados do VAAF ----
 recursos_vaaf = readxl::read_excel('dados/bruto/copy2_of_ReceitaeComplementaoporentefederadoFundeb2023.xlsx', na = '-', guess_max = 5e3, skip = 1)
